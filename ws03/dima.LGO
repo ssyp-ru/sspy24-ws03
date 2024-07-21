@@ -1,0 +1,113 @@
+to c
+repeat 360 [ rt 1 fd 1 ]
+setpencolor ( list 255 0 0 )
+lt 15
+fd 15
+bk 15
+rt 30
+fd 15 
+bk 15
+lt 15
+end
+
+to fish
+lt 90
+repeat 180 [
+fd 1
+rt 1]
+lt 90 fd 30 repeat 2 [rt 120 fd 30] bk 30 repeat 2 [ lt 120 bk 30 ] rt 90
+rt 30
+fd 120
+lt 90 fd 30 repeat 2 [rt 120 fd 30] bk 30 repeat 2 [ lt 120 bk 30 ] rt 90
+rt 122
+fd 120 
+lt 90 fd 30 repeat 2 [rt 120 fd 30] bk 30 repeat 2 [ lt 120 bk 30 ] rt 90
+rt 90
+pu fd 50 pd repeat 360 [ rt 1 fd 0.3 ]
+pu bk 50 pd
+end
+
+to O :n
+repeat :n [
+repeat 360 [
+fd 1 / :n
+rt 1 / :n]
+lt 90
+fd 20
+bk 20
+rt 90]
+end
+
+to pizza
+repeat 180 [
+fd 1
+rt 1]
+rt 30
+fd 120
+rt 122
+fd 120 
+end
+
+to Roblox
+lt 45 
+repeat 4 [
+rt 90 
+fd 100 
+]
+pu 
+rt 90 
+fd 47 
+rt 90 
+fd 47 
+pd 
+repeat 4 [
+fd 9 
+rt 90 
+] 
+ht
+end
+
+to sun :n
+ifelse ( (modulo :n 2) = 0)  [ O :n ]  [ z :n ]
+end
+
+to tree :n
+setpencolor ( list 255 0 0 )
+lt 15
+fd 15
+if (:n > 0) [tree :n - 5] 
+bk 15
+rt 30
+fd 15 
+if (:n > 0) [tree :n - 5] 
+bk 15
+lt 15
+end
+
+to tree2 :d
+if :d < 15 [fd :d bk :d stop]
+pd
+fd :d/2
+rt 30
+tree2 :d/2
+lt 30
+tree2 :d/2
+lt 30
+tree2 :d/2
+rt 30
+bk :d/2
+
+end
+
+to X
+rt 45 
+repeat 4 [ 
+fd 100 
+rt 90
+fd 25 
+rt 90 
+fd 100 
+rt 90 
+] 
+end
+

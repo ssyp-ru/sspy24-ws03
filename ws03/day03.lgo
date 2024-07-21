@@ -1,0 +1,176 @@
+to car 
+rt 90
+fd 90
+pu 
+fd 35
+pd 
+circle 35
+pu 
+fd 35
+pd 
+fd 200
+pu 
+fd 35
+pd
+circle 35
+pu
+fd 35
+pd
+fd 60
+lt 90
+fd 65
+lt 90
+fd 95
+rt 75
+fd 85
+lt 75
+fd 395-85*cos 75
+lt 90
+fd 65+85*sin 75
+ht
+
+end
+
+to cross :a :d
+pd
+fd :a bk :a*2 fd :a lt 90 fd :a bk :a*2 fd :a rt 90
+if :d<0 [ stop ]
+pu 
+rt 45
+fd :a/(sqrt 2)*1.5
+pd
+cross :a/(sqrt 2)/2 :d-1
+pu
+bk 2*(:a/(sqrt 2)*1.5)
+pd
+cross :a/(sqrt 2)/2 :d-1
+pu
+fd :a/(sqrt 2)*1.5
+lt 90
+fd :a/(sqrt 2)*1.5
+pd
+cross :a/(sqrt 2)/2 :d-1
+pu
+bk :a/(sqrt 2)*3
+pd
+cross :a/(sqrt 2)/2 :d-1
+pu
+fd :a/(sqrt 2)*1.5
+rt 45
+
+end
+
+to disc :path
+pd
+rt :path / (7*pi)*36
+fd 35
+bk 35
+rt 120
+fd 35
+bk 35
+rt 120
+fd 35
+bk 35
+lt :path / (7*pi)*36
+rt 120
+end
+
+to left1 :a :d
+if :d<0 [fd :a rt 90 fd :a rt 90 fd :a stop]
+rt 90
+right1 :a :d-1
+rt 90
+fd :a
+left1 :a :d-1
+lt 90
+fd :a
+lt 90
+left1 :a :d-1
+fd :a
+rt 90
+right1 :a :d-1
+rt 90
+end
+
+to move :path
+cs
+pu
+rt 90
+bk 300 - :path
+lt 90 pd
+car
+lt 90
+pu
+fd 125
+disc :path
+pu 
+fd 270
+disc :path
+end
+
+to ride
+make "path 0
+repeat 300 [ move :path ~
+make "path :path + 3 ~
+wait 5]
+end
+
+to right1 :a :d
+if :d<0 [fd :a lt 90 fd :a lt 90 fd :a stop]
+lt 90
+left1 :a :d-1
+lt 90
+fd :a
+right1 :a :d-1
+rt 90
+fd :a
+rt 90
+right1 :a :d-1
+fd :a
+lt 90
+left1 :a :d-1
+lt 90
+end
+
+to snowflake  :d :a
+if :a < 0 [fd :d stop]
+snowflake :d/3 :a-1
+lt 60
+snowflake :d/3 :a-1
+rt 120
+snowflake :d/3 :a-1
+lt 60
+snowflake :d/3 :a-1
+
+end
+
+to tree2 :d
+if :d < 15 [fd :d bk :d stop]
+pd
+fd :d/2
+rt 30
+tree2 :d/2
+lt 30
+tree2 :d/2
+lt 30
+tree2 :d/2
+rt 30
+bk :d/2
+
+end
+
+to zobor :a
+pd
+repeat :a * 2 [fd 100 rt 45 fd 10 rt 90 fd 10 rt 45 fd 100 rt 90 fd 10 * sqrt 2 rt 180 fd 10 * sqrt 2 lt 90]
+pu
+lt 45
+fd 5
+lt 45
+repeat :a [setfloodcolor "blue fill fd sqrt 200 setfloodcolor "red fill fd sqrt 200]
+rt 45
+bk 5 
+rt 45
+pd
+end
+
+Make "path 900

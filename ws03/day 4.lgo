@@ -1,0 +1,119 @@
+to car 
+rt 90
+fd 90
+pu 
+fd 35
+pd 
+circle 35
+pu 
+fd 35
+pd 
+fd 200
+pu 
+fd 35
+pd
+circle 35
+pu
+fd 35
+pd
+fd 60
+lt 90
+fd 65
+lt 90
+fd 95
+rt 75
+fd 85
+lt 75
+fd 395-85*cos 75
+lt 90
+fd 65+85*sin 75
+ht
+
+end
+
+to circles :n
+make "a 1
+repeat :n [repeat 1 + :a [circle 10 lt 180 lt 60 pu fd 25 pd circle 10 rt 140 pu fd 35 pd circle 10 rt 60]]
+make "a 1 + :a
+end
+
+to circles2 :n
+make "a 1
+rt 90
+repeat :n [repeat :a [ pd circle 10 pu fd 35 ] bk 35 * :a rt 120 fd 35 lt 120 make "a 1 + :a]
+
+end
+
+to disc :path
+pd
+rt :path / (7*pi)*36
+fd 35
+bk 35
+rt 120
+fd 35
+bk 35
+rt 120
+fd 35
+bk 35
+lt :path / (7*pi)*36
+rt 120
+end
+
+to disc2 :path 
+make "i 1
+make "colorlist (list "red "blue "green)
+pd
+rt :path / (7*pi)*36
+repeat 3 [rt 45 ~
+fd 5*sqrt 2 ~
+lt 45 ~
+lt arctan 1/6 ~
+fd 5*sqrt 37 ~
+rt arctan 1/6 ~
+lt 90 ~
+lt 90 ~
+rt arctan 1/6 ~
+fd 5*sqrt 37 ~
+lt arctan 1/6 ~
+lt 45 ~
+fd 5*sqrt 2 ~
+lt 135 ~
+pu ~
+fd 5 ~
+setfloodcolor item :i :colorlist ~
+fill ~
+make "i 1 + :i ~
+bk 5 ~
+rt 120 ~
+pd]
+lt :path / (7*pi)*36
+
+end
+
+to move :path
+cs
+pu
+rt 90
+bk 300 - :path
+lt 90 pd
+car
+lt 90
+pu
+fd 125
+disc2 :path
+pu 
+fd 270
+disc2 :path
+end
+
+to ride
+make "path 0
+repeat 600 [ move :path ~
+make "path :path + 1 ~
+wait 10]
+end
+
+Make "a 18
+Make "colorlist [red blue green]
+Make "i 4
+Make "path 225

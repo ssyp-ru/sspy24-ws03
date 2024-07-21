@@ -1,0 +1,841 @@
+to box
+lt 90
+fd 8
+rt 90
+pd
+fd 8
+rt 90
+fd 16
+rt 90
+fd 16
+rt 90
+fd 16
+rt 90
+fd 8
+rt 90
+fd 16
+bk 8
+lt 90
+pu
+fd 5
+setfloodcolor "red
+fill
+bk 10
+setfloodcolor "yellow
+fill
+fd 5
+end
+
+to boxingoal
+goal
+
+lt 90
+fd 8
+rt 90
+pd
+fd 8
+rt 90
+fd 16
+rt 90
+fd 16
+rt 90
+fd 16
+rt 90
+fd 8
+rt 90
+fd 16
+bk 8
+lt 90
+pu
+fd 5
+setfloodcolor "blue
+fill
+bk 10
+setfloodcolor "pink
+fill
+fd 5
+end
+
+to d0 
+pd
+setpensize 4
+rt arctan 0.5
+fd 5*sqrt 5
+bk 10*sqrt 5
+lt arctan 0.5
+repeat 2 [fd 20 ~
+rt 90 ~
+fd 10 ~
+rt 90]
+rt arctan 0.5
+fd 5*sqrt 5
+lt arctan 0.5
+end
+
+to d1
+setpensize 4
+pd
+fd 10
+bk 20
+fd 10
+end
+
+to d2
+pd
+setpensize 4
+rt 90
+fd 5
+lt 90
+fd 10
+lt 90
+fd 10
+bk 10
+lt 90
+fd 10
+rt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 10
+bk 10
+lt 90
+fd 10
+rt 90
+fd 5
+lt 90
+end
+
+to d3
+pd
+setpensize 4
+lt 90
+fd 5
+bk 10
+rt 90
+fd 10
+lt 90
+fd 10
+bk 10
+lt 90
+fd 20
+rt 90
+fd 10
+bk 10
+rt 90
+fd 10
+lt 90
+fd 5
+rt 90
+end
+
+to d4
+pd
+setpensize 4
+lt 90
+fd 5
+rt 90
+fd 10
+bk 10
+rt 90
+fd 10
+lt 90
+fd 10
+bk 20
+fd 10
+lt 90
+fd 5
+rt 90
+end
+
+to d5
+pd
+setpensize 4
+lt 90
+fd 5
+rt 90
+fd 10
+rt 90
+fd 10
+bk 10
+rt 90
+fd 10
+lt 90
+fd 10
+rt 90
+fd 10
+rt 90
+fd 10
+bk 10
+rt 90
+fd 10
+lt 90
+fd 5
+rt 90
+end
+
+to d6
+pd 
+setpensize 4
+lt 90
+fd 5
+rt 90
+fd 10
+rt 90
+fd 10
+bk 10
+rt 90
+fd 20
+lt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 5
+rt 90
+end
+
+to d7
+pd 
+setpensize 4
+rt arctan 1/2
+fd 10
+lt 90+arctan 1/2
+fd 10
+bk 10
+lt 90-arctan 1/2
+fd 20
+bk 10
+rt 180-arctan 1/2
+end
+
+to d8
+pd 
+setpensize 4
+rt 90
+fd 5
+lt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 10
+rt 90
+fd 10
+rt 90
+fd 10
+rt 90
+fd 10
+rt 90
+fd 5
+lt 90
+end
+
+to d9
+pd 
+setpensize 4
+rt 90
+fd 5
+lt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 10
+lt 90
+fd 10
+rt 90
+fd 10
+rt 90
+fd 10
+bk 10
+rt 90
+fd 10
+lt 90
+fd 5
+rt 90
+end
+
+to dl
+setpensize 4
+pd
+fd 30
+bk 40
+fd 10
+end
+
+to dse
+pd
+ellipsearc 300 10 10 330
+rt 90
+fd 10
+bk 20
+fd 10
+lt 90
+end
+
+to dv
+pu
+bk 10
+pd
+lt arctan 10 / 20
+fd 10*sqrt 5
+bk 10*sqrt 5
+rt (arctan 10 / 20) * 2
+fd 10*sqrt 5
+bk 10*sqrt 5 
+lt arctan 10 / 20
+pu
+fd 10
+end
+
+to field
+make "zoom 1.5
+setpensize 4
+pu
+lt 90
+fd 20*:zoom
+rt 90
+pd
+fd 20*:zoom
+rt 90
+fd 40*:zoom
+rt 90
+fd 40*:zoom
+rt 90
+fd 40*:zoom
+rt 90
+fd 20*:zoom
+rt 90
+pu
+fd 20*:zoom
+lt 90
+setpensize 1
+end
+
+to goal
+pu
+lt 90
+fd 10
+rt 90
+pd
+fd 10
+rt 90
+fd 20
+rt 90
+fd 20
+rt 90
+fd 20
+rt 90
+fd 10
+rt 90
+pu
+fd 10
+lt 90
+setfloodcolor "green
+fill
+end
+
+to ifelse1 :a
+	if :a = 0 [d0 stop] 
+	if :a = 1 [d1 stop] 
+	if :a = 2 [d2 stop] 
+	if :a = 3 [d3 stop] 
+	if :a = 4 [d4 stop] 
+	if :a = 5 [d5 stop] 
+	if :a = 6 [d6 stop] 
+	if :a = 7 [d7 stop] 
+	if :a = 8 [d8 stop] 
+	if :a = 9 [d9 stop] 
+	if :a = 10 [da stop] 
+	if :a = 11 [db stop] 
+	if :a = 12 [dc stop] 
+	if :a = 13 [dd stop] 
+	if :a = 14 [de stop] 
+	if :a = 15 [df stop] 
+end
+
+to level :p
+
+make "zoom 1.5
+openread :p
+setread :p
+make "t 0
+make "r 0
+repeat 10 [
+	make "t 0
+	repeat 10 [
+		do.while [make "tmp readchar ] [or ((rawascii item 1 :tmp)<48) ((rawascii item 1 :tmp)>57)]
+
+		 setitem :t item :r :map (item 1 :tmp)
+		make "t :t + 1
+	
+	]
+	make "r :r + 1
+]
+close :p
+pu
+lt 45
+fd 180 * sqrt 2
+rt 45
+printlevel
+setpencolor "black
+make "r 0
+repeat 10 [
+	make "t 0
+	repeat 10 [ 
+		if (item :t item :r :map) = 0 [ field ]
+		if (item :t item :r :map) = 1 [ field goal ]
+		if (item :t item :r :map) = 2 [ field box make "boxcounter :boxcounter + 1 ]
+		if (item :t item :r :map) = 3 [ field boxingoal ]
+		if (item :t item :r :map) = 5 [ field man make "x :t make "y :r ]
+		if (item :t item :r :map) = 6 [ man make "x :t make "y :r  ]
+		if (item :t item :r :map) = 9 [ wall ]
+		pu rt 90 fd 40*:zoom lt 90 pd
+		make "t :t + 1
+		
+	]
+	make "r :r + 1
+	pu rt 90 bk 400*:zoom rt 90 fd 40*:zoom lt 180
+]
+fd 40*:zoom * (10 - :y)
+rt 90
+fd 40*:zoom * :x
+lt 90
+output (list :x :y)
+
+end
+
+to lvlup
+	setitem :CurrentLevel :result :movecounter
+	make "movecounter 0
+	cs
+	make "CurrentLevel :CurrentLevel + 1
+	if :CurrentLevel = :maxlevel + 1 [ 
+		keyboardoff
+		cs setpensize 5 ; pd rt 155 fd 150 lt 90+40 fd 150
+		printresult
+		output (list 0 0)
+		stop
+	]
+	output level item :CurrentLevel :levels
+	
+end
+
+to main
+make "maxlevel 5
+ht
+cs
+make "levels (list "level01.txt "level02.txt "level03.txt "level04.txt "level05.txt "level06.txt "level07.txt "level08.txt )
+make "result { 0 0 0 0 0 0 0 0 0 0 0 }
+make "CurrentLevel 1
+make "boxcounter 0
+make "movecounter 0
+make "map { {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 {0 0 0 0 0 0 0 0 0 0}@0 }@0
+make "tmp level item :CurrentLevel :levels
+make "x item 1 :tmp
+make "y item 2 :tmp
+keyboardon [ make "tmp move (int keyboardvalue) :x :y
+	if :boxcounter = 0 [ make "tmp lvlup ]
+	make "x item 1 :tmp
+	make "y item 2 :tmp
+]
+end
+
+to man
+pu bk 5 ; move char down
+lt 90
+pd
+fd 10
+rt 90
+fd 10
+lt 90
+fd 5
+rt 135
+fd 5 * sqrt 2
+lt 135
+fd 5
+rt 90
+fd 5
+rt 90
+fd 30
+rt 90
+fd 5
+rt 90
+fd 25
+bk 20
+lt 90
+fd 25
+rt 90
+fd 10
+rt 90
+fd 5
+bk 5
+lt 90
+fd 10
+rt 90
+fd 10
+rt 90
+fd 20
+bk 10
+lt 90
+pu
+bk 2
+setfloodcolor "blue
+fill
+fd 19
+setfloodcolor "red
+fill
+bk 16
+setfloodcolor "yellow
+fill
+fd 4 ; bk 1
+end
+
+to move :key :x :y
+make "movecounter :movecounter + 1
+if (or (:key = 119) (:key = 87)) [ ; up
+	if (item :x item :y-1 :map)=9 [
+		output (list :x :y)  stop
+	]
+	if or (item :x item :y-1 :map)=0 (item :x item :y-1 :map)=1 [
+		setitem :x item :y :map (item :x item :y :map)-5 
+		newfield (item :x item :y :map) 
+		pu
+		fd 40*:zoom
+		make "y :y - 1 
+		setitem :x item :y :map (item :x item :y :map)+5
+		newfield (item :x item :y :map)
+		output (list :x :y) stop
+	]
+	if or (item :x item :y - 1 :map) = 2 (item :x item :y - 1 :map) = 3 [
+		if or (item :x item :y - 2 :map) = 0 (item :x item :y - 2 :map) = 1
+		[
+			; erase char
+			setitem :x item :y :map (item :x item :y :map)-5
+			newfield (item :x item :y :map) 
+			pu
+			fd 40*:zoom
+			make "y :y - 1
+			; boxcounter
+			if ((item :x item :y :map) = 3) [ 
+				make "boxcounter :boxcounter + 1
+			]
+			; erase chest, draw char
+			setitem :x item :y :map (item :x item :y :map)+3
+			newfield (item :x item :y :map)
+			pu 
+			fd 40 *:zoom
+			; draw chest
+			setitem :x item :y-1 :map (item :x item :y-1 :map)+2
+			newfield (item :x item :y-1 :map)
+			;boxcounter
+			if (item :x item :y-1 :map) = 3 [
+				make "boxcounter :boxcounter - 1
+			]
+			; moveto char
+			pu
+			bk 40*:zoom
+			output (list :x :y)  stop
+		]
+		output (list :x :y)  stop
+	]
+	print (list "ERROR!!! "Invalid "value "above "character)
+	output (list :x :y)  stop
+]
+if (or (:key = 97) (:key = 65)) [ ; left
+	if (item :x-1 item :y :map)=9 [
+	output (list :x :y)  stop
+	]
+	if or (item :x-1 item :y :map)=0 (item :x-1 item :y :map)=1 [
+		setitem :x item :y :map (item :x item :y :map)-5 ;remove char
+		newfield (item :x item :y :map) 
+		pu
+		lt 90
+		fd 40*:zoom
+		rt 90
+		make "x :x - 1 
+		setitem :x item :y :map (item :x item :y :map)+5
+		newfield (item :x item :y :map)
+		output (list :x :y) stop
+	]
+	if or (item :x-1 item :y :map) = 2 (item :x-1 item :y :map) = 3 [
+		if or (item :x-2 item :y :map) = 0 (item :x-2 item :y :map) = 1
+		[
+			; erase char
+			setitem :x item :y :map (item :x item :y :map)-5
+			newfield (item :x item :y :map) 
+			pu
+			lt 90
+			fd 40*:zoom
+			rt 90
+			make "x :x - 1
+			; boxcounter
+			if ((item :x item :y :map) = 3) [ 
+				make "boxcounter :boxcounter + 1
+			]
+			; erase chest, draw char
+			setitem :x item :y :map (item :x item :y :map)+3
+			newfield (item :x item :y :map)
+			pu 
+			lt 90
+			fd 40 *:zoom
+			rt 90
+			; draw chest
+			setitem :x-1 item :y :map (item :x-1 item :y :map)+2
+			newfield (item :x-1 item :y :map)
+			;boxcounter
+			if (item :x-1 item :y :map) = 3 [
+				make "boxcounter :boxcounter - 1
+			]
+			; moveto char
+			pu
+			lt 90
+			bk 40*:zoom
+			rt 90
+			output (list :x :y)  stop
+		]
+		output (list :x :y)  stop
+	]
+	print (list "ERROR!!! "Invalid "value "above "character)
+	output (list :x :y) stop
+]
+if or :key = 100 :key = 68 [ ; right
+	if (item :x+1 item :y :map)=9 [
+	output (list :x :y)  stop
+	]
+	if or (item :x+1 item :y :map)=0 (item :x+1 item :y :map)=1 [
+		setitem :x item :y :map (item :x item :y :map)-5 ;remove char
+		newfield (item :x item :y :map) 
+		pu
+		rt 90
+		fd 40*:zoom
+		lt 90
+		make "x :x + 1 
+		setitem :x item :y :map (item :x item :y :map)+5
+		newfield (item :x item :y :map)
+		output (list :x :y) stop
+	]
+	if or (item :x+1 item :y :map) = 2 (item :x+1 item :y :map) = 3 [
+		if or (item :x+2 item :y :map) = 0 (item :x+2 item :y :map) = 1
+		[
+			; erase char
+			setitem :x item :y :map (item :x item :y :map)-5
+			newfield (item :x item :y :map) 
+			pu
+			rt 90
+			fd 40*:zoom
+			lt 90
+			make "x :x + 1
+			; boxcounter
+			if ((item :x item :y :map) = 3) [ 
+				make "boxcounter :boxcounter + 1
+			]
+			; erase chest, draw char
+			setitem :x item :y :map (item :x item :y :map)+3
+			newfield (item :x item :y :map)
+			pu 
+			rt 90
+			fd 40 *:zoom
+			lt 90
+			; draw chest
+			setitem :x+1 item :y :map (item :x+1 item :y :map)+2
+			newfield (item :x+1 item :y :map)
+			;boxcounter
+			if (item :x+1 item :y :map) = 3 [
+				make "boxcounter :boxcounter - 1
+			]
+			; moveto char
+			pu
+			rt 90
+			bk 40*:zoom
+			lt 90
+			output (list :x :y)  stop
+		]
+		output (list :x :y)  stop
+	]
+	print (list "ERROR!!! "Invalid "value "above "character)
+	output (list :x :y) stop 
+]
+if or :key = 115 :key = 83 [ ; down 
+	if (item :x item :y+1 :map)=9 [
+		output (list :x :y)  stop
+	]
+	if or (item :x item :y+1 :map)=0 (item :x item :y+1 :map)=1 [
+		setitem :x item :y :map (item :x item :y :map)-5 
+		newfield (item :x item :y :map) 
+		pu
+		bk 40*:zoom
+		make "y :y + 1 
+		setitem :x item :y :map (item :x item :y :map)+5
+		newfield (item :x item :y :map)
+		output (list :x :y) stop
+	]
+	if or (item :x item :y + 1 :map) = 2 (item :x item :y + 1 :map) = 3 [
+		if or (item :x item :y + 2 :map) = 0 (item :x item :y + 2 :map) = 1
+		[
+			; erase char
+			setitem :x item :y :map (item :x item :y :map)-5
+			newfield (item :x item :y :map) 
+			pu
+			bk 40*:zoom
+			make "y :y + 1
+			; boxcounter
+			if ((item :x item :y :map) = 3) [ 
+				make "boxcounter :boxcounter + 1
+			]
+			; erase chest, draw char
+			setitem :x item :y :map (item :x item :y :map)+3
+			newfield (item :x item :y :map)
+			pu 
+			bk 40 *:zoom
+			; draw chest
+			setitem :x item :y+1 :map (item :x item :y+1 :map)+2
+			newfield (item :x item :y+1 :map)
+			;boxcounter
+			if (item :x item :y+1 :map) = 3 [
+				make "boxcounter :boxcounter - 1
+			]
+			; moveto char
+			pu
+			fd 40*:zoom
+			output (list :x :y)  stop
+		]
+		output (list :x :y)  stop
+	]
+	print (list "ERROR!!! "Invalid "value "above "character)
+	output (list :x :y) stop 
+]
+if or :key = 114 :key = 82 [ ; restart level
+	cs
+	make "boxcounter 0 
+	output level item :CurrentLevel :levels
+]
+; any other key
+output (list :x :y) 
+end
+
+to newfield :h
+setpencolor "white
+setpensize int 35 * :zoom
+pd
+fd 1
+bk 1
+setpensize 1
+setpencolor "black
+if or :h = 5 :h = 6 [ man ]
+if :h = 2 [ box ]
+if :h = 3 [ boxingoal ]
+if :h = 1 [ goal ]
+pu
+end
+
+to printlevel
+	setpensize 4
+	setpencolor [ 150 150 150 ]
+	pu fd 20*:zoom + 30
+	localmake "tmp :CurrentLevel
+	dl 
+	pu
+	rt 90
+	fd 18
+	lt 90
+	pd
+	dse
+	pu
+	rt 90
+	fd 25
+	lt 90
+	pd
+	dv
+	pu
+	rt 90
+	fd 25
+	lt 90
+	pd
+	dse
+	pu
+	rt 90
+	fd 18	
+	lt 90
+	pd
+	dl
+	pu
+	rt 90
+	fd 40
+	lt 90
+	if :tmp > 100 [ ifelse1 (int :tmp / 100) - (int :tmp / 1000) * 10]
+	pu
+	rt 90
+	fd 15
+	lt 90
+	pd
+	if :tmp > 10 [ ifelse1 (int :tmp / 10) - (int :tmp / 100) * 10]
+	pu
+	rt 90
+	fd 15
+	lt 90
+	pd
+	ifelse1 (:tmp) - (int :tmp / 10) * 10
+	pu bk 20*:zoom + 30 lt 90 fd 156 rt 90
+end
+
+to printresult
+localmake "tmp 0
+make "i 1
+repeat :maxlevel [
+	make "tmp item :i :result
+	ifelse1 :i
+	make "i :i + 1
+	pu rt 90 fd 80 lt 90 pd
+	if :tmp > 1000 [ifelse1 int :tmp / 1000 ]
+	pu
+	rt 90
+	fd 15
+	lt 90
+	pd
+	if :tmp > 100 [ ifelse1 (int :tmp / 100) - (int :tmp / 1000) * 10]
+	pu
+	rt 90
+	fd 15
+	lt 90
+	pd
+	if :tmp > 10 [ ifelse1 (int :tmp / 10) - (int :tmp / 100) * 10]
+	pu
+	rt 90
+	fd 15
+	lt 90
+	pd
+	ifelse1 (:tmp) - (int :tmp / 10) * 10
+	pu bk 50 lt 90 fd 80 + 3 * 15 rt 90
+]
+openappend "results.txt
+setwrite "results.txt
+print :result
+setwrite []
+close "results.txt
+end
+
+to wall
+field
+setfloodcolor "brown
+fill
+end
+
+Make "boxcounter 0
+Make "currentlevel 6
+Make "i 6
+Make "levels [level01.txt level02.txt level03.txt level04.txt level05.txt level06.txt level07.txt level08.txt]
+Make "map {{9 9 9 9 9 9 9 9 9 9}@0 {9 9 9 9 9 9 9 9 9 9}@0 {9 9 9 0 3 3 3 9 9 9}@0 {9 9 9 3 3 0 3 9 9 9}@0 {9 9 9 9 9 0 5 9 9 9}@0 {9 0 0 0 0 0 0 0 0 9}@0 {9 0 0 0 0 0 0 0 0 9}@0 {9 0 0 9 9 9 0 0 0 9}@0 {9 9 9 9 9 9 9 9 9 9}@0 {9 9 9 9 9 9 9 9 9 9}@0}@0
+Make "maxlevel 5
+Make "movecounter 0
+Make "o 3
+Make "r 10
+Make "result {14 24 52 108 354 0 0 0 0 0 0}
+Make "t 10
+Make "tmp [0 0]
+Make "x 0
+Make "y 0
+Make "zoom 1.5
